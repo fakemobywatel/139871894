@@ -55,7 +55,7 @@
         .icon-row {
             display: flex;
             justify-content: center;
-            margin-top: 320px;
+            margin-top: 300px;
         }
 
         .small-icon img {
@@ -193,6 +193,7 @@
                 audioElement.play().catch(function(error) {
                     console.error('Error playing audio:', error);
                 });
+                audioElement.volume = 0.15;
 
                 mainContent.classList.add('show');
                 startScreen.style.display = 'none';
