@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1178764715384647720/1284266655282626762/522421.ico?ex=66e60207&is=66e4b087&hm=d59fa18c52fe923afb1f952020d0d9c07201477c20f808ae0c5d6eee5b98e982&" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="nwmoscar">
+    <meta property="og:description" content="contact@nwmoscar.com">
+    <meta property="og:image" content="https://i.ibb.co/CsRPN58/522421.png">
+    <meta property="og:image:width" content="250">
+    <meta property="og:image:height" content="250">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        body {
+            cursor: url('https://i.ibb.co/hXkLgMK/312.png'), auto;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        .content {
+            margin-top: 160px;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .main-icon {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .main-icon img {
+            width: 450px;
+        }
+
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 320px;
+        }
+
+        .small-icon img {
+            width: 40px;
+            margin: 0 12px;
+        }
+
+        .copyright-notice {
+            display: flex;
+            justify-content: center;
+            font-family: "Mulish", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
+        }
+
+        audio {
+            display: none;
+        }
+
+        #start-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #main-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 4s ease-in-out, visibility 1s ease-in-out;
+}
+
+#main-content.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+    </style>
+    <title>nwmoscar</title>
+</head>
+<body>
+
+    <div id="start-screen">
+        <h2>Click to Enter</h2>
+    </div>
+
+    <div id="main-content">
+        <div id="particles-js"></div>
+
+        <div class="content">
+            <audio id="background-audio" autoplay loop>
+                <source src="https://cdn.discordapp.com/attachments/1178764715384647720/1284239279907799232/darkness.mp3?ex=66e5e888&is=66e49708&hm=782d5a0613e6f88b8c55a3c85bff53c412ccd88cb1f2707a24f0b165f7de0e91&" type="audio/mpeg">
+                Your browser isn't supported.
+            </audio>
+            <div class="main-icon">
+                <img src="https://i.ibb.co/wN7Ry18/35434563564.gif" alt="Main Icon">
+            </div>
+            <div class="icon-row">
+                <a href="https://open.spotify.com/artist/3rl9ErAF7w9iachW5kebwu?si=e7d7f8af1cb74caf">
+                    <div class="small-icon" id="spotify">
+                        <img src="https://i.ibb.co/KyQHCQn/24352.png" alt="Spotify Icon"/>
+                    </div>
+                </a>
+                <a href="https://instagram.com/nwmoscar">
+                    <div class="small-icon" id="instagram">
+                        <img src="https://i.ibb.co/9NQY76P/icons8-instagram-50.png" alt="IG Icon"/>
+                    </div>
+                </a>
+                <a href="mailto:contact@nwmoscar.com">
+                    <div class="small-icon" id="mail">
+                        <img src="https://i.ibb.co/YRdx8YG/icons8-email-50.png" alt="Mail Icon"/>
+                    </div>
+                </a>
+            </div>
+            <div class="copyright-notice">
+                <p>© 2024 nwmoscar - All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffffff' },
+                opacity: { value: 0.5 },
+                size: { value: 3, random: true },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 2 }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: false, mode: 'repulse' },
+                    onclick: { enable: false, mode: 'push' }
+                },
+                modes: {
+                    repulse: { distance: 100, duration: 0.4 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleText = " nwmoscar ";
+            let position = 0;
+
+            function animateTitle() {
+                document.title = titleText.substring(position) + titleText.substring(0, position);
+                position = (position + 1) % titleText.length;
+            }
+
+            setInterval(animateTitle, 400);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var startScreen = document.getElementById('start-screen');
+            var mainContent = document.getElementById('main-content');
+            var audioElement = document.getElementById('background-audio');
+
+            startScreen.addEventListener('click', function() {
+                console.log("Start screen clicked");
+                audioElement.play().catch(function(error) {
+                    console.error('Error playing audio:', error);
+                });
+
+                mainContent.classList.add('show');
+                startScreen.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
