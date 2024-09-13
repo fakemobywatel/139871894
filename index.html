@@ -171,17 +171,7 @@
             retina_detect: true
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const titleText = " nwmoscar ";
-            let position = 0;
 
-            function animateTitle() {
-                document.title = titleText.substring(position) + titleText.substring(0, position);
-                position = (position + 1) % titleText.length;
-            }
-
-            setInterval(animateTitle, 400);
-        });
 
         document.addEventListener('DOMContentLoaded', function() {
             var startScreen = document.getElementById('start-screen');
